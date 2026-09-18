@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>QuickShare</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <div class="logo">⚡</div>
+      <h1>QuickShare</h1>
+      <p class="subtitle">Send photos and files from your iPhone to your laptop.</p>
+
+      <div id="home">
+        <button id="createBtn" class="main-button">💻 Receive on Laptop</button>
+
+        <div class="or">OR</div>
+
+        <div class="join">
+          <h3>📱 Send from iPhone</h3>
+          <input id="codeInput" type="text" maxlength="6" inputmode="numeric"
+                 autocomplete="one-time-code" placeholder="Enter 6-digit code">
+          <button id="joinBtn" class="join-button">Join & Send</button>
+        </div>
+
+        <p class="note">Works over the internet — your iPhone hotspot is okay.</p>
+      </div>
+
+      <div id="laptop" class="hidden">
+        <div class="waiting">🟢 Waiting for iPhone</div>
+        <p>Open QuickShare on your iPhone and enter this code:</p>
+
+        <div id="roomCode" class="code">------</div>
+
+        <button id="copyBtn" class="copy-button">Copy Code</button>
+
+        <div class="qr-wrap">
+          <div id="qr"></div>
+          <small>Scan this QR code with your iPhone</small>
+        </div>
+
+        <div id="phoneStatus" class="status-box">
+          Waiting for iPhone to join...
+        </div>
+      </div>
+
+      <div id="client" class="hidden">
+        <div class="connected">
+          <span>✓</span>
+          <div>
+            <b>Ready to Send</b>
+            <small>Choose your photos or files below.</small>
+          </div>
+        </div>
+
+        <label for="fileInput" class="upload">
+          <div class="upload-icon">📸</div>
+          <h2>Select Photos or Files</h2>
+          <p>Choose multiple photos, videos or files</p>
+        </label>
+
+        <input id="fileInput" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.zip,.txt">
+
+        <div id="files" class="files"></div>
+
+        <button id="sendBtn" class="main-button hidden">⚡ Send Files</button>
+
+        <div id="progressContainer" class="hidden">
+          <div class="progress-info">
+            <span id="progressText">Preparing...</span>
+            <span id="percent">0%</span>
+          </div>
+          <div class="progress-background">
+            <div id="progress" class="progress"></div>
+          </div>
+        </div>
+
+        <div id="sent" class="received hidden">
+          <div class="success">✓</div>
+          <h3>Files Sent!</h3>
+          <p>Your files are now available on the laptop.</p>
+        </div>
+      </div>
+
+      <div id="laptopFiles" class="hidden">
+        <div class="connected">
+          <span>✓</span>
+          <div>
+            <b>iPhone Connected</b>
+            <small>Files will appear here automatically.</small>
+          </div>
+        </div>
+
+        <div id="downloadList" class="files"></div>
+
+        <button id="downloadAllBtn" class="main-button hidden">⬇️ Download All</button>
+        <button id="newRoomBtn" class="secondary-button">Create New Room</button>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

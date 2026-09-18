@@ -1,0 +1,14 @@
+{
+  "name": "quickshare",
+  "version": "2.0.0",
+  "description": "Simple internet-based iPhone to laptop photo and file sharing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "ws": "^8.18.3"
+  }
+}
